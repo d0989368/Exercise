@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>管理後台</title>
+</head>
+<body bgcolor="CED3FE">
+	<a href='#'>返回管理介面</a>
+	<a href='#'>安全退出</a> 歡迎您:[[${session.loginuser.name}]]
+	<hr />
+	<div style="text-align: center">
+		<h1>管理會員</h1>
+		<table border="1px" cellspacing="0" bordercolor="green"
+			style="width: 800px; margin: auto">
+			<tr bgcolor="pink">
+ 				<th>ID</th>
+                <th>Name</th>
+                <th>Password</th>
+                <th>Age</th>
+                <th>Email</th>
+			</tr>
+			<tr bgcolor="ffc0cb" th:each="user:${users}">
+				<td th:text="${user.id}">a</td>
+				<td th:text="${user.name}">b</td>
+				<td th:text="${user.password}">c</td>
+				<td th:text="${user.email}">d</td>
+				<td th:text="${user.age}">e</td>
+			</tr>
+		</table>
+		<br />
+	</div>
+	<hr />
+</body>
+</html>
